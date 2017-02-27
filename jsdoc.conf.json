@@ -4,8 +4,7 @@
   },
   "source": {
     "include": [
-      "./lib/",
-      "./promise/"
+      "./lib/"
     ]
   },
   "opts": {
