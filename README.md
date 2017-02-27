@@ -1,8 +1,10 @@
+## This is the fork of tedeh/jayson. I had removed some unnecessary code to obtain a compatibility with webpack for browser and make library simple.
+
 # Jayson
 
 Jayson is a [JSON-RPC 2.0][jsonrpc-spec] and [1.0][jsonrpc1-spec] compliant server and client written in JavaScript for [node.js][node.js] that aims to be as simple as possible to use.
 
-[jsonrpc-spec]: http://jsonrpc.org/spec.html 
+[jsonrpc-spec]: http://jsonrpc.org/spec.html
 [jsonrpc1-spec]: http://json-rpc.org/wiki/specification
 [node.js]: http://nodejs.org/
 [jayson-npm]: https://www.npmjs.com/package/jayson
@@ -11,7 +13,7 @@ Jayson is a [JSON-RPC 2.0][jsonrpc-spec] and [1.0][jsonrpc1-spec] compliant serv
 [badge-npm]: https://img.shields.io/npm/v/jayson.svg?style=flat-square
 [badge-downloads-month]: https://img.shields.io/npm/dm/jayson.svg?style=flat-square
 
-[![travis build status][badge-travis]][jayson-travis] 
+[![travis build status][badge-travis]][jayson-travis]
 [![npm version][badge-npm]][jayson-npm]
 [![npm][badge-downloads-month]][jayson-npm]
 
@@ -260,7 +262,7 @@ server.http().listen(3000);
 
 #### Batches
 
-A batch request is an array of individual requests that are sent to the server as one. Doing a batch request is very simple in Jayson and consists of constructing an array of individual requests (created by not passing a callback to `Client.prototype.request`) that is then itself passed to `Client.prototype.request`. 
+A batch request is an array of individual requests that are sent to the server as one. Doing a batch request is very simple in Jayson and consists of constructing an array of individual requests (created by not passing a callback to `Client.prototype.request`) that is then itself passed to `Client.prototype.request`.
 
 Combined server/client example in [examples/batch_request/index.js](examples/batch_request/index.js):
 
@@ -476,7 +478,7 @@ Every request to `add` on the public server will now relay the request to the pr
 
 #### Method routing
 
-Passing a property named `router` in the server options will enable you to write your own logic for routing requests to specific functions. 
+Passing a property named `router` in the server options will enable you to write your own logic for routing requests to specific functions.
 
 Server example with custom routing logic in [examples/method_routing/server.js](examples/method_routing/server.js):
 
@@ -688,7 +690,7 @@ In addition to events that are specific to certain interfaces, all servers will 
 
 #### Server Errors
 
-If you should like to return an error from an method request to indicate a failure, remember that the [JSON-RPC 2.0][jsonrpc-spec] specification requires the error to be an `Object` with a `code (Integer/Number)` to be regarded as valid. You can also provide a `message (String)` and a `data (Object)` with additional information. Example: 
+If you should like to return an error from an method request to indicate a failure, remember that the [JSON-RPC 2.0][jsonrpc-spec] specification requires the error to be an `Object` with a `code (Integer/Number)` to be regarded as valid. You can also provide a `message (String)` and a `data (Object)` with additional information. Example:
 
 ```javascript
 var jayson = require('jayson');
